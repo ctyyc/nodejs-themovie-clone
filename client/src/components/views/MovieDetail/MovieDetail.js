@@ -7,7 +7,7 @@ import Favorite from './Sections/Favorite';
 import { Row } from 'antd';
 
 function MovieDetail(props) {
-    let movieId = props.match.params.movieId;
+    const movieId = props.match.params.movieId;
     const [Movie, setMovie] = useState([]);
     const [Casts, setCasts] = useState([]);
     const [ActorToggle, setActorToggle] = useState(false);
