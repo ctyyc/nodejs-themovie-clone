@@ -60,10 +60,12 @@ function MovieDetail(props) {
                     <Row gutter={[16, 16]}>
                         {Casts && Casts.map((cast, index) => (
                             <React.Fragment key={index}>
-                                <GridCards
-                                    image={cast.profile_path ? `${IMAGE_BASE_URL}w500${cast.profile_path}` : null}
-                                    characterName={cast.name}
-                                />
+                                {cast.profile_path &&
+                                    <GridCards
+                                        image={cast.profile_path ? `${IMAGE_BASE_URL}w500${cast.profile_path}` : null}
+                                        characterName={cast.name}
+                                    />
+                                }                                
                             </React.Fragment>
                         ))}
                     </Row>
