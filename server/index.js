@@ -29,8 +29,8 @@ app.use(cookieParser());
 app.use('/api/users', require('./routes/users'));
 app.use('/api/favorite', require('./routes/favorite'));
 
-
 app.use('/uploads', express.static('uploads'));
+
 
 
 // Serve static assets if in production
@@ -44,7 +44,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`Server Listening on ${port}`);

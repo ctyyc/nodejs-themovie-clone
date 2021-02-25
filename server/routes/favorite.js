@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { Favorite } = require('../models/Favorite');
 
+
+
 router.post('/favoriteNumber', (req, res) => {
     
     // mongoDB에서 Favorite 숫자 조회
@@ -11,7 +13,7 @@ router.post('/favoriteNumber', (req, res) => {
         // Favorite 숫자 정보 전송
         res.status(200).json({success: true, favoriteNumber: info.length});
     });
-})
+});
 
 router.post('/favorited', (req, res) => {
     
@@ -25,8 +27,8 @@ router.post('/favorited', (req, res) => {
         }
 
         res.status(200).json({success: true, favorited: result});
-    })
-})
+    });
+});
 
 router.post('/addToFavorite', (req, res) => {
     
@@ -36,9 +38,8 @@ router.post('/addToFavorite', (req, res) => {
         if(err) return res.status(400).send(err);
 
         return res.status(200).json({success:true});
-    })
-})
-
+    });
+});
 
 router.post('/getFavoredMovie', (req, res) => {
 
@@ -48,8 +49,7 @@ router.post('/getFavoredMovie', (req, res) => {
 
         return res.status(200).json({success: true, favorites});
     });
-})
-
+});
 
 router.post('/removeFromFavorite', (req, res) => {
 
@@ -59,6 +59,8 @@ router.post('/removeFromFavorite', (req, res) => {
 
         return res.status(200).json({success: true, result});
     });
-})
+});
+
+
 
 module.exports = router;
